@@ -32,3 +32,4 @@ onMounted(async () => {
   ingredients.value = response.data;
 });
 </script>
+ <!-- hello pratikshit -->
