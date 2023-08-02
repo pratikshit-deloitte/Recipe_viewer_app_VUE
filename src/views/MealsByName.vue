@@ -23,21 +23,17 @@ import store from "../store";
 import Meals from '../components/Meals.vue'
 
 const route = useRoute();
-const keyword = ref("");
+const keyword = ref('')
 const meals = computed(() => store.state.searchedMeals);
 
 function searchMeals() {
+  console.log(keyword.value)
   if (keyword.value) {
+
     store.dispatch("searchMeals", keyword.value);
   } else {
     store.commit("setSearchedMeals", []);
   }
 }
 
-onMounted(() => {
-  keyword.value = route.params.name
-  if (keyword.value) {
-    searchMeals()
-  }
-})
 </script>
